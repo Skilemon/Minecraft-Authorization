@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Minecraft</title>
+    <link rel="shortcut icon" href="https://luck.lzzy.ml/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://luck.lzzy.ml/Content/sign.css" rel="stylesheet">
+</head>
+
+<body class="textcenter">
+    <form id="submit" class="form-sign mask">
+        <img class="mb-4" src="https://luck.lzzy.ml/favicon.ico" width="74" height="74" style="margin-top: 12px;">
+        <h1 class="h3 mb-3 font-weight-normal">Minecraft</h1>
+        <!-- <label>请在下方列表选择服务器</label> -->
+        <select class="form-control" id="select">
+            <option value="0" selected>OldDream</option>
+            <option value="1">WhyBe[Beta]</option>
+        </select>
+        <label style="margin-top:12px;" id="content">最初的生存服，和二号生存服分割开了，性能有所提升，现用于建造遗迹……</label>
+        <div style="margin-top:20px;">
+            <button class="btn btn-primary btn-block" type="submit">Add to Minecraft</button>
+        </div>
+        <p style="padding-top:12px;"><a target="_blank" href="https://jq.qq.com/?_wv=1027&k=JhpMMkRo">加入群聊</a></p>
+        <p class="mt-4 mb-2 text-muted">Copyright &copy; 2014-2021 Skilemon</p>
+    </form>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.3.0/layer.min.js"></script>
+    <script>
+        layer.msg('此工具仅用于给游戏快速添加服务器');
+
+        $('#select').change(() => {
+            switch ($('#select').val()) {
+                case '0':
+                    $('#content').text('最初的生存服，和二号生存服分割开了，性能有所提升，现用于建造遗迹……');
+                    break;
+                case '1':
+                    $('#content').text('二号生存服，因更换了服务器，需要手动开服，所以玩之前记得先在群里@下我，目前没发现卡顿……');
+                    // window.location.href = 'minecraft://?addExternalServer=svia.aternos.me|svia.aternos.me:61360';
+                    break;
+            }
+        });
+
+        $('#submit').submit(function () {
+            switch ($('#select').val()) {
+                case '0':
+                    layer.msg('请允许打开Minecraft程序');
+                    window.location.href = 'minecraft://?addExternalServer=OldDream|106.15.207.110:19051';
+                    break;
+                case '1':
+                    layer.msg('请允许打开Minecraft程序');
+                    window.location.href = 'minecraft://?addExternalServer=WhyBe|berkelium.aternos.host:61360';
+                    break;
+                default:
+                    layer.msg('请选择一个服务器');
+                    break;
+            }
+
+            return false;
+        });
+    </script>
+
+</html>
