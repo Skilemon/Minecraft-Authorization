@@ -1,0 +1,2 @@
+# Minecraft-Authorization
+Minecraft Authorization.
