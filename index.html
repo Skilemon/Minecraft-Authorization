@@ -20,27 +20,33 @@
             <option value="0" selected>OldDream</option>
             <option value="1">WhyBe[Beta]</option>
         </select>
-        <label style="margin-top:12px;" id="content">最初的生存服，和二号生存服分割开了，性能有所提升，现用于建造遗迹……</label>
+        <label style="margin-top:12px;" id="content">最初的生存服，和二号生存服分割开了，性能有所提升，现用于建造城堡</label>
         <div style="margin-top:20px;">
-            <button class="btn btn-primary btn-block" type="submit">Add to Minecraft</button>
+            <button class="btn btn-primary btn-block" type="submit">添加到 Minecraft</button>
+            <button class="btn btn-success btn-block" type="button" id="JinQun">加入群聊</button>
         </div>
-        <p style="padding-top:12px;"><a target="_blank" href="https://jq.qq.com/?_wv=1027&k=JhpMMkRo">加入群聊</a></p>
+        <!-- <p style="padding-top:12px;"><a target="_blank" href="https://jq.qq.com/?_wv=1027&k=JhpMMkRo">加入群聊</a></p> -->
         <p class="mt-4 mb-2 text-muted">Copyright &copy; 2014-2021 Skilemon</p>
     </form>
+    <iframe width="0" height="0" id="iframeweb" style="border:0;"></iframe>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.3.0/layer.min.js"></script>
     <script>
         layer.msg('此工具仅用于给游戏快速添加服务器');
 
+        $('#JinQun').click(function () {
+            layer.msg('请允许打开 QQ');
+            $('#iframeweb').attr('src', 'https://jq.qq.com/?_wv=1027&k=JhpMMkRo');
+        });
+
         $('#select').change(() => {
             switch ($('#select').val()) {
                 case '0':
-                    $('#content').text('最初的生存服，和二号生存服分割开了，性能有所提升，现用于建造遗迹……');
+                    $('#content').text('最初的生存服，和二号生存服分割开了，性能有所提升，现用于建造城堡');
                     break;
                 case '1':
                     $('#content').text('二号生存服，因更换了服务器，需要手动开服，所以玩之前记得先在群里@下我，目前没发现卡顿……');
-                    // window.location.href = 'minecraft://?addExternalServer=svia.aternos.me|svia.aternos.me:61360';
                     break;
             }
         });
@@ -48,12 +54,14 @@
         $('#submit').submit(function () {
             switch ($('#select').val()) {
                 case '0':
-                    layer.msg('请允许打开Minecraft程序');
-                    window.location.href = 'minecraft://?addExternalServer=OldDream|106.15.207.110:19051';
+                    layer.msg('请允许打开 Minecraft');
+                    window.location.href = 'minecraft://?addExternalServer=OldDream|mc-od.blueart.design:19051';
+                    // window.location.href = 'minecraft://?addExternalServer=OldDream|106.15.207.110:19051';
                     break;
                 case '1':
-                    layer.msg('请允许打开Minecraft程序');
-                    window.location.href = 'minecraft://?addExternalServer=WhyBe|berkelium.aternos.host:61360';
+                    layer.msg('请允许打开 Minecraft');
+                    window.location.href = 'minecraft://?addExternalServer=WhyBe|mc-wb.blueart.design:61360';
+                    // window.location.href = 'minecraft://?addExternalServer=WhyBe|svia.aternos.me:61360';
                     break;
                 default:
                     layer.msg('请选择一个服务器');

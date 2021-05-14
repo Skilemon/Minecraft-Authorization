@@ -1,0 +1,20 @@
+{
+    "status": {
+        "code": "1",
+        "message": "操作已经成功完成",
+        "created_at": "2021-05-14 12:04:16"
+    },
+    "record": {
+        "id": 810955568,
+        "name": "mc-wb",
+        "value": "svia.aternos.me.",
+        "status": "enable",
+        "weight": null
+    }
+}
+
+{
+    "code": 200,
+    "msg": "success",
+    "pic_url": "https:\/\/gw1.alicdn.com\/tfscom\/tuitui\/TB2m5g_mrZnBKNjSZFKXXcGOVXa_!!0-rate.jpg"
+}
