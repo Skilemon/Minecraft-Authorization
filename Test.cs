@@ -1,4 +1,4 @@
-        public void ChangeDNS(string dnsValue)
+        public void ChangeDNS(string dnsValue = "test.svia.ml")
         {
             try
             {
